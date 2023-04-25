@@ -16,6 +16,9 @@ Adaptive tensor algorithms for the adaptation of convolution filters.
    ```
 
 2. Replace on of the convolutional layers with [CP-decomposition](https://arxiv.org/pdf/1412.6553.pdf):
+   ```
+   python3 cp_decomposition.py
+   ```
    <pre>
    (0): BasicBlock(
      (conv1): Conv2d(32, 64, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
