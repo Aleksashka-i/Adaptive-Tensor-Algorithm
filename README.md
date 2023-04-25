@@ -1,5 +1,5 @@
 # CourseProject
-Adaptive tensor algorithms for the adaptation of convolution filters.
+### Adaptive tensor algorithms for the adaptation of convolution filters.
 
 
 **Examples:**
