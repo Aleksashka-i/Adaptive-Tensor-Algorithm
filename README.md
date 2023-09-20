@@ -28,8 +28,6 @@
      (shortcut): LambdaLayer()
    )
    
-   <b>Total Trainable Params: 464154</b>
-   
    ------------------>
    
    (0): BasicBlock(
@@ -37,15 +35,13 @@
      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
      <b>(conv2): Sequential(
        (0_decomposed): Conv2d(64, 21, kernel_size=(1, 1), stride=(1, 1), bias=False)
-       (1_decomposed): Conv2d(21, 21, kernel_size=(3, 1), stride=(1, 1), padding=(1, 0), groups=21, bias=False)
-       (2_decomposed): Conv2d(21, 21, kernel_size=(1, 3), stride=(1, 1), padding=(0, 1), groups=21, bias=False)
+       (1_decomposed): Conv2d(21, 21, kernel_size=(31, 1), stride=(1, 1), padding=(15, 0), groups=21, bias=False)
+       (2_decomposed): Conv2d(21, 21, kernel_size=(1, 31), stride=(1, 1), padding=(0, 15), groups=21, bias=False)
        (3_decomposed): Conv2d(21, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
      )</b>
      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
      (shortcut): LambdaLayer()
    )
-   
-   <b>Total Trainable Params: 430104</b>
    </pre>
 
 3. Fine-tune entire network after replacement (epochs = 1):
