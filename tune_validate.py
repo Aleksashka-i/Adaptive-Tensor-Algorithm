@@ -16,6 +16,9 @@ def train(train_loader, model, criterion, optimizer, epoch, device, args):
     data_time = AverageMeter()
     losses = AverageMeter()
     top1 = AverageMeter()
+    
+    # switch to train mode
+    model.train()
 
     end = time.time()
     
@@ -29,14 +32,13 @@ def train(train_loader, model, criterion, optimizer, epoch, device, args):
         if args.half:
             input_var = input_var.half()
 
-        # compute output
         output = model(input_var)
         loss = criterion(output, target_var)
-
-        # compute gradient and do SGD step
+        
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
+        
 
         output = output.float()
         loss = loss.float()
@@ -57,6 +59,9 @@ def train(train_loader, model, criterion, optimizer, epoch, device, args):
                   'Prec@1 {top1.val:.3f} ({top1.avg:.3f})'.format(
                       epoch, i, len(train_loader), batch_time=batch_time,
                       data_time=data_time, loss=losses, top1=top1), flush=True)
+    
+    return losses.avg, top1.avg
+       
 
 # validation
 def validate(val_loader, model, criterion, device, args):
@@ -111,7 +116,7 @@ def validate(val_loader, model, criterion, device, args):
           .format(batch_time=batch_time), flush=True)
 
     
-    return top1.avg
+    return losses.avg, top1.avg
 
 class AverageMeter(object):
     """Computes and stores the average and current value"""
