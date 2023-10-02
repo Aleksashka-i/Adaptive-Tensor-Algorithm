@@ -23,16 +23,18 @@ Test: [50/79]	Time 0.332 (0.538)	Loss 0.4470 (0.3828)	Prec@1 90.625 (92.371)
 Заменяем набор слоёв в моделе на декомпозированные (все фильтры 3x3) (``weigths/weigths_nls.mat``) с помощью ``cpd_nls``. Затем делаем файнтюнинг весов (``epochs=50``). Лучшая модель сохранена в ``decomposed/best_initial_decompose.th``. Заменённые слои можно посмотреть в ``functional.py``, в примере их 6.
 ```
 %run stage_2/fine_tune_initial_decomposition.py
+```
+![initial_decomposition](stage_2/initial_decomposition.png)
 
-...
+Можно запустить ``stage_2/check.py``, чтобы посмотреть на структуру модели и accuracy на тестовой выборке y ``decompose/best_initial_decompose.th`` (это быстро). Хуже на 1.1 от исходной модели.
+```
+%run stage_2/check.py
+
 Test: [0/79]	Time 7.342 (7.342)	Loss 0.3062 (0.3062)	Prec@1 92.969 (92.969)
 Test: [50/79]	Time 0.303 (0.508)	Loss 0.5858 (0.4408)	Prec@1 90.625 (91.330)
  * Prec@1 91.520
  * Timec@1 0.430
 ```
-![initial_decomposition](stage_2/initial_decomposition.png)
-
-Можно запустить ``stage_2/check.py``, чтобы посмотреть на структуру модели и accuracy на тестовой выборке y ``decompose/best_initial_decompose.th`` (это быстро). Хуже на 1.1 от исходной модели.
 <details>
    <summary><b>%run stage_2/check.py</b></summary>
    <pre>
