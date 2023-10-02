@@ -394,4 +394,10 @@ sigmas:  [-1.0235847234725952, -1.6244574785232544, -0.6324220895767212, -1.0306
 Можно запустить ``stage_5/check.py``, чтобы посмотреть на структуру модели и accuracy на тестовой выборке y ``decompose/best_final.th`` (это быстро). 
 ```
 %run stage_5/check.py
+
+Files already downloaded and verified
+Test: [0/79]	Time 5.046 (5.046)	Loss 0.1370 (0.1370)	Prec@1 94.531 (94.531)
+Test: [50/79]	Time 0.328 (0.419)	Loss 0.3376 (0.2745)	Prec@1 90.625 (91.452)
+ * Prec@1 91.550
+ * Timec@1 0.383
 ```
