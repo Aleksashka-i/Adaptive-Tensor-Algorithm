@@ -390,7 +390,6 @@ sigmas:  [-1.0235847234725952, -1.6244574785232544, -0.6324220895767212, -1.0306
 ```
 %run stage_5/final_fine_tune.py
 ```
-![final](stage_5/final.png)
 Можно запустить ``stage_5/check.py``, чтобы посмотреть на структуру модели и accuracy на тестовой выборке y ``decompose/best_final.th`` (это быстро). 
 ```
 %run stage_5/check.py
